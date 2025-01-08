@@ -3,7 +3,9 @@ import FullLayout from "@/layouts/FullLayout";
 export default function Home() {
   return (
     <FullLayout>
-      <div>Home version 6</div>
+      <div>Home</div>
+
+      <div>VERSION 7</div>
     </FullLayout>
   );
 }
