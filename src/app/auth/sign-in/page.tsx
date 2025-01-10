@@ -3,6 +3,7 @@ import BaseButton from "@/components/BaseButton";
 import BaseInput from "@/components/BaseInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import { authSignInService } from "@/services/auth.service";
 
 const validationSchema = Yup.object({
   login: Yup.string().required("Login is required"),
@@ -28,9 +29,15 @@ export default function SignInPage() {
     },
   });
 
+  const handleClick = () => {
+    authSignInService({ email: "test@gmail.com", password: "123123" });
+  };
+
   return (
     <>
       <h3 className="text-lg">Sign In</h3>
+
+      <button onClick={handleClick}>test</button>
 
       <form
         onSubmit={formik.handleSubmit}
